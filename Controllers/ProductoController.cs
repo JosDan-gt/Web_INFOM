@@ -85,6 +85,62 @@ namespace Backend_INFOM.Controllers
         }
 
 
+        [HttpGet("report/products-by-supplier/{supplierId}")]
+        public IActionResult GetProductsBySupplier(int supplierId)
+        {
+            var productos = _context.Productos
+                .Include(p => p.IdProveedorNavigation) // Incluye la relación con la tabla de proveedores.
+                .Where(p => p.IdProveedor == supplierId)
+                .Select(p => new
+                {
+                    p.IdProducto,
+                    p.Codigo,
+                    p.DescripcionProducto,
+                    p.Precio,
+                    p.Stock,
+                    p.Iva,
+                    p.Peso,
+                    Proveedor = new
+                    {
+                        p.IdProveedorNavigation.Descripcion
+                        // Agrega otras propiedades del proveedor que necesites
+                    }
+                })
+                .ToList();
+
+            return Ok(productos);
+        }
+
+
+
+        [HttpGet("ReporteGeneralProductos")]
+        public IActionResult ReporteGeneralProductos()
+        {
+            var reporteProductos = _context.Productos
+                .Select(p => new
+                {
+                    p.IdProducto,
+                    p.Codigo,
+                    p.DescripcionProducto,
+                    p.Precio,
+                    p.Stock,
+                    p.Iva,
+                    p.Peso,
+                    Marca = p.IdMarcaNavigation != null ? p.IdMarcaNavigation.Descripcion : null,
+                    Presentacion = p.IdPresentacionNavigation != null ? p.IdPresentacionNavigation.Descripcion : null,
+                    Proveedor = p.IdProveedorNavigation != null ? p.IdProveedorNavigation.Descripcion : null,
+                    Zona = p.IdZonaNavigation != null ? p.IdZonaNavigation.Descripcion : null
+
+                })
+                .ToList();
+
+            return Ok(reporteProductos);
+        }
+
+
+
+
+
 
 
     }
