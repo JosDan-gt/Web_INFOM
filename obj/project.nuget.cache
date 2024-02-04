@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xg0pvZ9m0a5Axx2s5j4my+D1g1PquKhSbSTpzLdodvUBfc093mXREu1ZdGBpZ4QVJUzWERPZGj8IRSRz2fc0nw==",
+  "dgSpecHash": "KzhdJteDF+mvkhh3rf28+96a70FnqPZMgMk7qQKRe4HJxaDd47ZS03wc4TL7UYIMEchZnhtA5uGGJs5Ch6THdA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aldan\\Desktop\\Backend_INFOM\\Backend_INFOM.csproj",
+  "projectFilePath": "C:\\Users\\aldan\\Desktop\\Backend_Infom\\Backend_INFOM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aldan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\aldan\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

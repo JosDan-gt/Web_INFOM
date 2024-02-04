@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aldan\\Desktop\\Backend_INFOM\\Backend_INFOM.csproj": {}
+    "C:\\Users\\aldan\\Desktop\\Backend_Infom\\Backend_INFOM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aldan\\Desktop\\Backend_INFOM\\Backend_INFOM.csproj": {
+    "C:\\Users\\aldan\\Desktop\\Backend_Infom\\Backend_INFOM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aldan\\Desktop\\Backend_INFOM\\Backend_INFOM.csproj",
+        "projectUniqueName": "C:\\Users\\aldan\\Desktop\\Backend_Infom\\Backend_INFOM.csproj",
         "projectName": "Backend_INFOM",
-        "projectPath": "C:\\Users\\aldan\\Desktop\\Backend_INFOM\\Backend_INFOM.csproj",
+        "projectPath": "C:\\Users\\aldan\\Desktop\\Backend_Infom\\Backend_INFOM.csproj",
         "packagesPath": "C:\\Users\\aldan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aldan\\Desktop\\Backend_INFOM\\obj\\",
+        "outputPath": "C:\\Users\\aldan\\Desktop\\Backend_Infom\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
