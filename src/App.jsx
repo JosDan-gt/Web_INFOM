@@ -3,7 +3,6 @@ import Header from "./header"
 import GetProd from "./GetProd"
 import GetReportes from "./GetReportes";
 import GetReportePorProveedor from "./GetPorProveedor";
-import PostProd from "./PostProductos";
 import 'tailwindcss/tailwind.css';
 
 
@@ -14,9 +13,6 @@ function App() {
     <>
       <Header />
       <div className="grid">
-        {/* <div>
-          <PostProd />
-        </div> */}
         <div>
           <div className="flex text-center justify-center mt-10">
             <GetProd />

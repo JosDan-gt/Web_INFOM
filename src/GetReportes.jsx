@@ -2,10 +2,15 @@ import React, { useState, useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
 import jsPDF from 'jspdf';
 
+/**
+ * Componente que muestra un detalle general de productos en una tabla y permite exportarlos a un archivo PDF.
+ */
 const GetReportes = () => {
+  // Estado para almacenar los datos y el estado de carga
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Efecto secundario para cargar los datos al montar el componente
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,7 +31,9 @@ const GetReportes = () => {
     fetchData();
   }, []);
 
-
+  /**
+   * Función para exportar los datos a un archivo PDF.
+   */
   const exportToPDF = () => {
     const doc = new jsPDF();
 
@@ -49,7 +56,7 @@ const GetReportes = () => {
           yPosition = 20; // Reinicia la posición en la nueva página
         }
 
-
+        // Agrega información del producto al PDF
         doc.text(`Marca: ${producto.marca}`, 10, yPosition + 10);
         doc.text(`Proveedor: ${producto.proveedor}`, 10, yPosition + 20);
         doc.text(`Presentacion: ${producto.presentacion}`, 10, yPosition + 30);
@@ -64,22 +71,23 @@ const GetReportes = () => {
         // Incremento adicional para separar registros de proveedores
         yPosition += incrementoProveedor + espacioEntreRegistros;
       });
-
-
-
     });
 
     // Guarda el PDF
     doc.save('reporte_por_prov.pdf');
   };
 
-
   return (
     <div>
+      {/* Encabezado del componente */}
       <h1 className="text-2xl font-bold mb-4">Detalle General</h1>
+      
+      {/* Botón para exportar a PDF */}
       <button onClick={exportToPDF} className="bg-blue-500 text-white py-2 px-4 rounded mb-3">
         Exportar a PDF
       </button>
+
+      {/* Renderiza la tabla y maneja la carga de datos */}
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -87,6 +95,7 @@ const GetReportes = () => {
           <table className="table">
             <thead>
               <tr className='bg-slate-500'>
+                {/* Encabezados de la tabla */}
                 <th className='pl-6' scope="col">#</th>
                 <th className='pl-6' scope="col">Marca</th>
                 <th className='pl-6' scope="col">Proveedor</th>
@@ -101,8 +110,10 @@ const GetReportes = () => {
               </tr>
             </thead>
             <tbody className='mb-20'>
+              {/* Mapea los datos para renderizar las filas de la tabla */}
               {data.map((producto, index) => (
                 <tr key={index} className='bg-slate-400'>
+                  {/* Datos del producto */}
                   <th scope="row">{producto.idProducto}</th>
                   <td>{producto.marca}</td>
                   <td>{producto.proveedor}</td>
