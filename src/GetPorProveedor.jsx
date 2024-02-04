@@ -15,7 +15,6 @@ const GetReportePorProveedor = () => {
 
             const data = await response.json();
             setData(data);
-            console.log('Cantidad de registros:', data.length);
 
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -84,30 +83,33 @@ const GetReportePorProveedor = () => {
     return (
         <div>
             <h1 className="text-2xl font-bold mb-4">Detalle por Proveedor</h1>
-            <button onClick={exportToPDF} className="bg-blue-500 text-white py-2 px-4 rounded">
-                Exportar a PDF
-            </button>
+
             <form onSubmit={handleSubmit}>
-                <label>
+                <label className='bg-blue-600 p-6 rounded-lg'>
                     ID del Proveedor:
-                    <input type="text" value={proveedorId} onChange={handleInputChange} />
+                    <input className='border p-2 ml-5 bg-slate-400 rounded-lg mb-5' type="text" value={proveedorId} onChange={handleInputChange} />
                 </label>
+                <button onClick={exportToPDF} className="bg-blue-500 text-white py-5 px-5 rounded mb-5 ml-4">
+                    Exportar a PDF
+                </button>
+
 
             </form>
+
             {loading ? (
                 <p>Loading...</p>
             ) : (
                 <table className="table bg-slate-500">
                     <thead>
                         <tr className='bg-slate-500'>
-                            <th scope="col">#</th>
-                            <th scope="col">Proveedor</th>
-                            <th scope="col">Código</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Stock</th>
-                            <th scope="col">IVA</th>
-                            <th scope="col">Peso</th>
+                            <th className='pl-5' scope="col">#</th>
+                            <th className='pl-5' scope="col">Proveedor</th>
+                            <th className='pl-5' scope="col">Código</th>
+                            <th className='pl-5' scope="col">Descripción</th>
+                            <th className='pl-5' scope="col">Precio</th>
+                            <th className='pl-5' scope="col">Stock</th>
+                            <th className='pl-5' scope="col">IVA</th>
+                            <th className='pl-5' scope="col">Peso</th>
                         </tr>
                     </thead>
                     <tbody className='mb-20'>
